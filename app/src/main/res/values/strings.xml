@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KooglePlay</string>
+    <string name="search_for_apps_and_games"><![CDATA[Search for apps & games]]></string>
+    <string name="icon_menu">icon menu</string>
+    <string name="icon_voice">icon voice</string>
+    <string name="profile_photo">profile photo</string>
+    <string name="games">Games</string>
+    <string name="apps">Apps</string>
+    <string name="movies">Movies</string>
+    <string name="books">Books</string>
+</resources>
