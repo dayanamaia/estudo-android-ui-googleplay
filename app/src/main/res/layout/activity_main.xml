@@ -9,8 +9,11 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:elevation="0dp"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <com.google.android.material.appbar.CollapsingToolbarLayout
             app:layout_scrollFlags="scroll|enterAlways"
             android:layout_width="match_parent"
@@ -79,14 +82,14 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tmpList"
-        tools:itemCount="30"
-        tools:listitem="@android:layout/simple_list_item_1"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    <FrameLayout
+        android:id="@+id/container"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginBottom="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         app:menu="@menu/bottom_nav"
