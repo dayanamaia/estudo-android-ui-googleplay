@@ -27,6 +27,7 @@ class ForYouVerticalAdapter : RecyclerView.Adapter<ForYouVerticalAdapter.Vertica
                     itemView.context, RecyclerView.HORIZONTAL, false
                 )
 
+                this.rv_horizontal.adapter = ForYouHorizontalAdapter()
 
             }
         }
