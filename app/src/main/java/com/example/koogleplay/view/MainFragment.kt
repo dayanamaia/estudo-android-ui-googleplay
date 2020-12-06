@@ -34,13 +34,4 @@ class MainFragment : Fragment() {
     }
 }
 
-class FragmentTypeAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-    override fun getItemCount(): Int {
-        return GamesType.values().size
-    }
 
-    override fun createFragment(position: Int): Fragment {
-        return GameFragment()
-    }
-
-}
