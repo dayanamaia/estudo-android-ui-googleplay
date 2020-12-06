@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.koogleplay.R
+import com.example.koogleplay.model.GamesType
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
 class MainFragment : Fragment() {
-
-    val test = arrayListOf("A", "B", "C", "D", "E", "F", "G", "H")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,9 +25,10 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.frag_view_pager.adapter = FragmentTypeAdapter(this)
+        view.frag_view_pager.isUserInputEnabled = false
 
         TabLayoutMediator(view.tab_layout, view.frag_view_pager) { tab, position ->
-            tab.text = test[position] + position
+            tab.text = GamesType.values()[position].label
         }.attach()
 
     }
@@ -36,11 +36,11 @@ class MainFragment : Fragment() {
 
 class FragmentTypeAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int {
-        return 8
+        return GamesType.values().size
     }
 
     override fun createFragment(position: Int): Fragment {
-        return Fragment()
+        return GameFragment()
     }
 
 }
