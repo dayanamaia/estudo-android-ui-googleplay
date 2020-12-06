@@ -1,9 +1,10 @@
-    package com.example.koogleplay
+    package com.example.koogleplay.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.koogleplay.R
 
-class MainActivity : AppCompatActivity() {
+    class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
