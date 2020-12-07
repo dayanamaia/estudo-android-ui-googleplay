@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.koogleplay.R
+import com.example.koogleplay.model.Feed
+import com.example.koogleplay.model.feed
 import com.example.koogleplay.view.adapter.ForYouVerticalAdapter
+import com.google.gson.Gson
 
 class GameFragment: Fragment() {
 
@@ -18,6 +21,9 @@ class GameFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+
         return inflater.inflate(R.layout.fragment_game, container, false)
     }
 
@@ -26,5 +32,17 @@ class GameFragment: Fragment() {
 
         forYouVerticalAdapter = ForYouVerticalAdapter()
         view.findViewById<RecyclerView>(R.id.rv_vertical).adapter = forYouVerticalAdapter
+        requestForYou()
+    }
+
+    private fun requestForYou() {
+        Thread {
+            Thread.sleep(1000)
+            val feed: Feed = Gson().fromJson(feed(), Feed::class.java)
+
+            activity?.runOnUiThread {
+                forYouVerticalAdapter?.add(feed.categories)
+            }
+        }.start()
     }
 }
